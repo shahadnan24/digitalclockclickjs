@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="clicksomewhere">
+        <h3>Click Some Where on screen</h3>
+        <div class="clickedtime">Clicked Time:</div><br>
+        <div class="clickedposition">Clicked Position:</div>
+    </div>
+</body>
+<script>
+    clickedPosition = document.querySelector('.clickedposition')
+    clickedTime = document.querySelector('.clickedtime')
+    document.onclick = (e) =>{
+        let timenow = new Date()
+        thishour = timenow.getHours()
+        thismin = timenow.getMinutes()
+        thissec = timenow.getSeconds()
+        thismisec = timenow.getMilliseconds()
+        clickedPosition.textContent =`Clicked Position: Y ${e.clientY} ,  X ${e.clientX}`
+        clickedTime.textContent =`Clicked Time: ${thishour} Hours   ${thismin} Minutes  ${thissec} Second  ${thismisec} MilliSecond `
+    }
+</script>
+</html>
